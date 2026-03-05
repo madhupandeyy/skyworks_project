@@ -1,0 +1,9 @@
+{
+	"name": "skyworks-adf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4b7fe7d8-80d6-46f5-b562-a272836c343f",
+		"tenantId": "ec634146-88b4-48ea-9fa4-feba18d7cc5c"
+	}
+}
