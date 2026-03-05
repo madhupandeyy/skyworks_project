@@ -1,0 +1,16 @@
+{
+	"name": "ds_control_table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_delta_control",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureDatabricksDeltaLakeDataset",
+		"typeProperties": {
+			"database": "skyworks",
+			"table": "control.pipeline_config"
+		},
+		"schema": []
+	}
+}
