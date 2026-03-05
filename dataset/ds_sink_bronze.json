@@ -1,0 +1,24 @@
+{
+	"name": "ds_sink_bronze",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_skyworks",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "@concat(item().dataset_name, '_', formatDateTime(utcNow(), 'yyyyMMddHHmmss'), '.parquet')",
+				"folderPath": {
+					"value": "@item().sink_path",
+					"type": "Expression"
+				},
+				"fileSystem": "skyworks-lake"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
