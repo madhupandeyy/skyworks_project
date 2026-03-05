@@ -5,14 +5,22 @@
 			"referenceName": "ls_adls_skyworks",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"folder": {
+				"type": "string"
+			},
+			"file": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "@concat(item().dataset_name, '_', formatDateTime(utcNow(), 'yyyyMMddHHmmss'), '.parquet')",
+				"fileName": "@dataset().file",
 				"folderPath": {
-					"value": "@item().sink_path",
+					"value": "@dataset().folder",
 					"type": "Expression"
 				},
 				"fileSystem": "skyworks-lake"
